@@ -10,6 +10,9 @@ function selectionSort(arr){
                 swap = arr[i];
                 arr[i] = arr[j];
                 arr[j] = swap;
+
+                //One liner javascript code to swap two numbers
+                // [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
             }
         }
     }
@@ -21,9 +24,7 @@ function callSelectionSort(){
     const arr = [8, 2, 9, 1, 4, 3, 7];
     let sortedArray = selectionSort(arr);
     let index;
-    for(index in sortedArray){
-        console.log(sortedArray[index]);
-    }
+    console.log(sortedArray);
 }
 
 callSelectionSort();

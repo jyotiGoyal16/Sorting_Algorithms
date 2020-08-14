@@ -19,9 +19,7 @@ function insertionSort(arr){
 function callInsertionSort(){
     const arr = [6, 8, 1, 4, 5, 3, 7, 2];
     const sortedArray = insertionSort(arr);
-    for(let index in sortedArray){
-        console.log(sortedArray[index]);
-    }
+    console.log(sortedArray);
 };
 
 callInsertionSort();

@@ -14,6 +14,9 @@ function bubbleSort(arr){
                 swap = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = swap;
+
+                //One liner javascript code to swap two numbers
+                // [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
             }
         }
     }
@@ -24,9 +27,7 @@ function bubbleSort(arr){
 function callBubbleSort(){
     const arr = [6, 8, 1, 4, 5, 3, 7, 2];
     const sortedArray = bubbleSort(arr);
-    for(let index in sortedArray){
-        console.log(sortedArray[index]);
-    }
+    console.log(sortedArray);
 }
 
 callBubbleSort();
