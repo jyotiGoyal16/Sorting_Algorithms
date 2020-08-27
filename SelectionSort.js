@@ -23,7 +23,6 @@ function selectionSort(arr){
 function callSelectionSort(){
     const arr = [8, 2, 9, 1, 4, 3, 7];
     let sortedArray = selectionSort(arr);
-    let index;
     console.log(sortedArray);
 }
 
