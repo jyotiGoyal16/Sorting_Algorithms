@@ -1,4 +1,4 @@
-# Sorting_Algorithms_Searching_Algorithms
+# Sorting_And_Searching_Algorithms
 
 In this repo, we have tried implementation of basic searching and sorting algorithms written in javascript.
 
