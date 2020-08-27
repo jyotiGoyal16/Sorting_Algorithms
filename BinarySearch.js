@@ -1,6 +1,6 @@
 /*
     Binary Search - This is the searching algorithm that uses the concept of divide and conquer to find an element in a sorted array.
-    Time Complexity - O(n/2)
+    Time Complexity - O(logn)
 */
 
 function binarySearch(arr, element, startIndex, endIndex){
