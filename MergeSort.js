@@ -6,6 +6,10 @@
     Time Complexity - O(nlogn)
 */
 
+//METHOD 1
+
+//using javascript array slice
+
 function mergeSort(arr){
     if(arr.length <= 1){
         return arr;
@@ -37,3 +41,48 @@ function callMergeSort(){
 };
 
 callMergeSort();
+
+
+//METHOD 2
+
+//classic mergesort in javascript
+//wrapped whole code in IIFE to avoid global variables
+
+(function(){
+  let arr = [38, 27, 43, 3, 9, 82, 10]; 
+  let b = new Array(arr.length);
+
+  function merge(arr, l, m , r){
+    let i = l,
+        j = m +1,
+        k = l;
+
+    while(i<=m && j<=r){
+      if(arr[i] <= arr[j])
+        b[k++] = arr[i++];
+      else
+        b[k++] = arr[j++];
+    }
+
+    while(i<=m)
+      b[k++] = arr[i++];
+
+    while(j<=r)
+      b[k++] = arr[j++];
+
+    for(k=l; k<=r; k++)
+      arr[k] = b[k];
+  }
+
+  function mergeSort(arr, l, r){
+    if(l>=r)
+      return;
+    let m = l + Math.floor((r-l)/2);
+    mergeSort(arr, l, m);
+    mergeSort(arr, m+1, r);
+    merge(arr, l, m, r);
+  }
+
+  mergeSort(arr, 0, arr.length-1);
+  console.log(arr);
+})();
