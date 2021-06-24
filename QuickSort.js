@@ -58,7 +58,7 @@ function callQuickSort(){
 callQuickSort();
 
 
-//METHOD 2 - using fisr element as pivot
+//METHOD 2 - using first element as pivot
 
 function swap(arr, i, j){
   let temp = arr[i];
