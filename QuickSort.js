@@ -6,6 +6,8 @@
     Time Complexity- O(nlogn)
 */
 
+//METHOD 1- using middle element as pivot
+
 function partition(arr, low, high){
     let pivot = arr[Math.floor((low+high)/2)];
     let leftIndex = low;
@@ -54,3 +56,86 @@ function callQuickSort(){
 }
 
 callQuickSort();
+
+
+//METHOD 2 - using fisr element as pivot
+
+function swap(arr, i, j){
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+function partition(arr, low, high){
+  let pivot = arr[low],
+      left = low,
+      right = high;
+  
+  while(left < right){
+    while(arr[left] <= pivot)
+      left++;
+    while(arr[right] > pivot)
+      right--;
+    if(left < right){
+      swap(arr, left, right);
+      left++;
+      right--;
+    }
+  }
+  arr[low] = arr[right];
+  arr[right] = pivot;
+  return right;
+}
+
+function quickSort(arr, low, high){
+  let pivot;
+  if(low < high){
+    pivot = partition(arr, low, high);
+     quickSort(arr, low, pivot-1);
+     quickSort(arr, pivot+1, high);
+  }
+}
+const arr = [70, 80, 30, 90, 40, 10, 50];
+quickSort(arr, 0, arr.length-1);
+console.log(arr);
+
+//METHOD 3 - using last element as pivot
+
+function swap(arr, i, j){
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
+
+function partition(arr, low, high){
+  let pivot = arr[high],
+      left = low,
+      right = high;
+  
+  while(left < right){
+    while(arr[left] < pivot)
+      left++;
+    while(arr[right] >= pivot)
+      right--;
+    if(left < right){
+      swap(arr, left, right);
+      left++;
+      right--;
+    }
+  }
+  arr[high] = arr[left];
+  arr[left] = pivot;
+  return left;
+}
+
+function quickSort(arr, low, high){
+  let pivot;
+  if(low < high){
+    pivot = partition(arr, low, high);
+     quickSort(arr, low, pivot-1);
+     quickSort(arr, pivot+1, high);
+  }
+}
+const arr = [70, 80, 30, 90, 40, 10, 50];
+quickSort(arr, 0, arr.length-1);
+console.log(arr);
